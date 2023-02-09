@@ -7,7 +7,7 @@
 #include "include/functions.h"
 
 int main() {
-    using namespace std::literals::chrono_literals;
+    using namespace std::chrono_literals;
     int64_t start_val = 0;
     int64_t stop_val = 0;
     const int repeat_val = 10;
