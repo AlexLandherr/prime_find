@@ -45,7 +45,7 @@ int main() {
         auto prog_start_time = std::chrono::steady_clock::now();
 
         for (int k = 0; k < repeat_val; k++) {
-            std::cout << "Iteration " << (k + 1) << " of " << repeat_val << '\n';
+            std::cout << "Iteration " << (k + 1) << " of " << repeat_val << " Runtime (ns): ";
             auto iteration_start_time = std::chrono::steady_clock::now();
             for (int64_t i = start_val; i < stop_val + 1; i++) {
                 if (is_prime(i)) {
@@ -55,6 +55,7 @@ int main() {
             auto iteration_stop_time = std::chrono::steady_clock::now();
             std::chrono::duration<int64_t, std::nano> elapsed_single_iteration = iteration_stop_time - iteration_start_time; //how many nanoseconds have elapsed.
             iteration_length_arr[k] = elapsed_single_iteration.count(); //store elapsed_single_iteration nanoseconds in iteration_length_arr.
+            std::cout << elapsed_single_iteration.count() << '\n';
         }
 
         avg_search_time = std::accumulate(std::begin(iteration_length_arr), std::end(iteration_length_arr), avg_search_time) / repeat_val;
