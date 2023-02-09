@@ -10,6 +10,10 @@ Change directory to repo:
 ```
 cd prime_find/
 ```
+Create a directory called `obj`:
+```
+mkdir obj
+```
 
 Then build & compile using `make`:
 ```
