@@ -48,7 +48,7 @@ int main() {
             std::cout << "Iteration " << (k + 1) << " of " << repeat_val << " Runtime (ns): ";
             auto iteration_start_time = std::chrono::steady_clock::now();
             for (int64_t i = start_val; i < stop_val + 1; i++) {
-                if (is_prime(i)) {
+                if (func::prime::is_prime(i)) {
                     prime_count++;
                 }
             }
@@ -67,12 +67,12 @@ int main() {
         std::cout << "Prime benchmark is done!" << '\n';
 
         std::cout << "\n**** Results ****" << '\n';
-        std::cout << "Program ran for total of (DD:HH:MM:SS): " << to_days_hours_minutes_seconds(prog_runtime_nanoseconds) << '\n';
+        std::cout << "Program ran for total of (DD:HH:MM:SS): " << func::to_days_hours_minutes_seconds(prog_runtime_nanoseconds) << '\n';
         std::cout << "\n";
         std::cout << "Program ran for nanoseconds: " << prog_runtime_nanoseconds << '\n';
         std::cout << "\n";
         std::cout << "Average time to find all primes between " << start_val << " and " << stop_val << " was (DD:HH:MM:SS):" << '\n';
-        std::cout << to_days_hours_minutes_seconds((int64_t) avg_search_time) << '\n';
+        std::cout << func::to_days_hours_minutes_seconds((int64_t) avg_search_time) << '\n';
         std::cout << "\n";
         std::cout << "Average search time (nanoseconds): " << (int64_t) avg_search_time << '\n';
         std::cout << "Number of primes found is: " << prime_count / repeat_val << '\n';
