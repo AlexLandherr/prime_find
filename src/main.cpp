@@ -18,7 +18,7 @@ int main() {
     std::string yes_choices[] = {"Y", "y", "Yes", "yes"};
     std::string no_choices[] = {"N", "n", "No", "no"};
 
-    std::cout << "Start prime_search? [Y/n]: ";
+    std::cout << "Start prime_find? [Y/n]: ";
     std::cin >> choice;
     if (std::find(std::begin(yes_choices), std::end(yes_choices), choice) != std::end(yes_choices)) {
         while (true) {
@@ -67,14 +67,14 @@ int main() {
         std::cout << "Prime benchmark is done!" << '\n';
 
         std::cout << "\n**** Results ****" << '\n';
-        std::cout << "Program ran for total of (DD:HH:MM:SS): " << func::to_days_hours_minutes_seconds(prog_runtime_nanoseconds) << '\n';
+        std::cout << "Program ran for total of (DD:HH:MM:SS.SSSSSSSSS): " << func::to_days_hours_minutes_seconds(prog_runtime_nanoseconds) << '\n';
         std::cout << "\n";
-        std::cout << "Program ran for nanoseconds: " << prog_runtime_nanoseconds << '\n';
+        std::cout << "Program ran for: " << prog_runtime_nanoseconds << " ns" << '\n';
         std::cout << "\n";
-        std::cout << "Average time to find all primes between " << start_val << " and " << stop_val << " was (DD:HH:MM:SS):" << '\n';
+        std::cout << "Average time to find all primes between " << start_val << " and " << stop_val << " was (DD:HH:MM:SS.SSSSSSSSS):" << '\n';
         std::cout << func::to_days_hours_minutes_seconds((int64_t) avg_search_time) << '\n';
         std::cout << "\n";
-        std::cout << "Average search time (nanoseconds): " << (int64_t) avg_search_time << '\n';
+        std::cout << "Average search time: " << (int64_t) avg_search_time << " ns" << '\n';
         std::cout << "Number of primes found is: " << prime_count / repeat_val << '\n';
     } else if (std::find(std::begin(no_choices), std::end(no_choices), choice) != std::end(no_choices)) {
         std::cout << "Exited program." << '\n';
