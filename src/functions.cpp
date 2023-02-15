@@ -10,7 +10,7 @@ namespace func {
 
     namespace prime {
 
-        bool is_prime(int64_t n) {
+        bool is_prime(const uint64_t &n) {
             if (n <= 1) {
                 return false;
             } else if (n == 2) {
@@ -19,8 +19,8 @@ namespace func {
                 return false;
             }
 
-            int64_t max_divisor = std::floor(std::sqrt((double) n));
-            for (int64_t d = 3; d < max_divisor + 1; d+=2) {
+            uint64_t max_divisor = std::floor(std::sqrt((long double) n));
+            for (uint64_t d = 3; d < max_divisor + 1; d+=2) {
                 if (n % d == 0) {
                     return false;
                 }
@@ -30,7 +30,7 @@ namespace func {
         }
     }
 
-    std::string to_days_hours_minutes_seconds(int64_t nanoseconds) {
+    std::string to_days_hours_minutes_seconds(uint64_t nanoseconds) {
         constexpr uint64_t ns_in_day = 86400000000000;
         constexpr uint64_t ns_in_hour = 3600000000000;
         constexpr uint64_t ns_in_min = 60000000000;
